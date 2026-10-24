@@ -74,6 +74,11 @@
           <ul>
             <li><a href="#tentang">Tentang TPJ</a></li>
             <li><a href="#pembahasan">Pembahasan</a></li>
+            <li>
+              <a href="/amp/" target="_blank" rel="noopener noreferrer"
+                >Versi Ringan</a
+              >
+            </li>
           </ul>
         </div>
         <div>
@@ -160,9 +165,6 @@
     </main>
     <footer id="footer">
       <p>© 2026 The Prediksi Jitu. All Rights Reserved.</p>
-      <p>
-        <a id="amp-link" href="/amp/">Buka versi ringan</a>
-      </p>
     </footer>
     <script>
       (function () {
@@ -223,17 +225,14 @@
           (a, i) =>
             (a.textContent = (
               english
-                ? ["About TPJ", "Discussions", "Community Channels", "More Links"]
-                : ["Tentang TPJ", "Pembahasan", "Kanal Komunitas", "Tautan Lainnya"]
+                ? ["About TPJ", "Discussions", "Lightweight Version", "Community Channels", "More Links"]
+                : ["Tentang TPJ", "Pembahasan", "Versi Ringan", "Kanal Komunitas", "Tautan Lainnya"]
             )[i]),
         );
         document.querySelector("#menu h2").textContent = english ? "General" : "Umum";
         document.querySelectorAll("#menu h2")[1].textContent = english ? "Community" : "Komunitas";
         document.getElementById("lang-en").classList.toggle("active", english);
         document.getElementById("lang-id").classList.toggle("active", !english);
-        document.getElementById("amp-link").textContent = english
-          ? "Open lightweight version"
-          : "Buka versi ringan";
       }
       document.getElementById("lang-en").onclick = () => language(true);
       document.getElementById("lang-id").onclick = () => language(false);
