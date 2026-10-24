@@ -1,22 +1,20 @@
 <!doctype html>
 <html amp lang="id">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,initial-scale=1"
-    />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
     <title>The Prediksi Jitu | Informasi dan Kanal Komunitas</title>
-    <meta name="description" content="Mengenal The Prediksi Jitu, komunitas yang membahas prediksi jitu dan informasi seputar angka HK. Temukan pembahasan dan kanal komunitas TPJ." />
+    <meta name="description" content="Mengenal The Prediksi Jitu, komunitas yang membahas prediksi jitu dan informasi seputar angka HK. Temukan pembahasan dan kanal komunitas TPJ."/>
 
-    <meta name="language" content="id-ID" />
-    <meta name="categories" content="website" />
-    <meta name="geo.region" content="ID" />
-    <meta name="geo.placename" content="Indonesia" />
+    <meta name="robots" content="index,follow"/>
+    <meta name="language" content="id-ID"/>
+    <meta name="categories" content="website"/>
+    <meta name="geo.region" content="ID"/>
+    <meta name="geo.placename" content="Indonesia"/>
 
-    <link rel="canonical" href="https://eatcells.pages.dev/" />
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="96x96" />
+    <link href="https://eatcells.pages.dev/" rel="canonical"/>
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="96x96"/>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
@@ -557,134 +555,79 @@
         color: #fff;
       }
 
-      /* Warna latar mengikuti pilihan tema; animasi terlihat di bidang TPJ pada HP. */
+      /* Grid bergerak hanya pada background luar panel. */
       body {
-        background-color: #f5f2f3;
-        background-image:
-          radial-gradient(
-            ellipse at 16% 15%,
-            rgba(209, 30, 53, 0.1),
-            transparent 48%
-          ),
-          radial-gradient(
-            ellipse at 88% 85%,
-            rgba(211, 77, 91, 0.08),
-            transparent 48%
-          ),
-          radial-gradient(rgba(128, 89, 96, 0.12) 0.65px, transparent 0.65px);
-        background-size:
-          auto,
-          auto,
-          19px 19px;
+        position: relative;
+        isolation: isolate;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: #f2eff0;
       }
       body.dark-background {
-        background-color: #141318;
-        background-image:
-          radial-gradient(
-            ellipse at 16% 15%,
-            rgba(175, 27, 53, 0.18),
-            transparent 48%
-          ),
-          radial-gradient(
-            ellipse at 88% 85%,
-            rgba(132, 36, 59, 0.12),
-            transparent 48%
-          ),
-          radial-gradient(rgba(222, 168, 179, 0.1) 0.65px, transparent 0.65px);
+        background: #141318;
       }
-      .visual {
-        position: relative;
-        overflow: hidden;
-        isolation: isolate;
-        background: #faf5f6;
-      }
-      .visual::before,
-      .visual::after {
-        content: "";
-        position: absolute;
-        width: 270px;
-        height: 270px;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: -1;
-      }
-      .visual::before {
-        top: -100px;
-        left: -90px;
-        background: radial-gradient(
-          circle,
-          rgba(225, 78, 99, 0.28),
-          rgba(236, 145, 160, 0.09) 50%,
-          transparent 70%
-        );
-        animation: tpj-drift-a 12s ease-in-out infinite alternate;
-      }
-      .visual::after {
-        bottom: -110px;
-        right: -85px;
-        background: radial-gradient(
-          circle,
-          rgba(212, 36, 66, 0.21),
-          rgba(237, 118, 139, 0.07) 52%,
-          transparent 70%
-        );
-        animation: tpj-drift-b 15s ease-in-out infinite alternate;
-      }
-      .visual-mark,
-      .visual-line,
-      .visual-name,
-      .visual-tag {
+      .page {
         position: relative;
         z-index: 1;
       }
+      .visual {
+        background: #f3f3f4;
+      }
       .dark .visual {
-        background: #22191f;
+        background: #22242a;
       }
-      .dark .visual::before {
-        background: radial-gradient(
-          circle,
-          rgba(218, 39, 78, 0.34),
-          rgba(142, 26, 59, 0.13) 50%,
-          transparent 70%
-        );
+      .visual::before,
+      .visual::after {
+        display: none;
+        animation: none;
       }
-      .dark .visual::after {
-        background: radial-gradient(
-          circle,
-          rgba(197, 40, 74, 0.29),
-          rgba(141, 30, 53, 0.1) 52%,
-          transparent 70%
-        );
+      .visual-mark {
+        letter-spacing: 0;
+        padding-right: 0;
       }
-      @keyframes tpj-drift-a {
+      .motion-bg {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: -1;
+        background: #f2eff0;
+      }
+      .dark-background .motion-bg {
+        background: #141318;
+      }
+      .motion-bg::before {
+        content: "";
+        position: absolute;
+        inset: -65px;
+        background-image:
+          linear-gradient(rgba(175, 37, 64, 0.12) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(175, 37, 64, 0.12) 1px, transparent 1px);
+        background-size: 48px 48px;
+        animation: tpj-grid-drift 12s linear infinite;
+      }
+      .dark-background .motion-bg::before {
+        background-image:
+          linear-gradient(rgba(237, 99, 129, 0.14) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(237, 99, 129, 0.14) 1px, transparent 1px);
+      }
+      @keyframes tpj-grid-drift {
         from {
-          transform: translate(0, 0);
-          opacity: 0.65;
+          transform: translate3d(0, 0, 0);
         }
         to {
-          transform: translate(115px, 85px);
-          opacity: 1;
-        }
-      }
-      @keyframes tpj-drift-b {
-        from {
-          transform: translate(0, 0);
-          opacity: 0.65;
-        }
-        to {
-          transform: translate(-110px, -70px);
-          opacity: 1;
+          transform: translate3d(48px, 48px, 0);
         }
       }
       @media (prefers-reduced-motion: reduce) {
-        .visual::before,
-        .visual::after {
+        .motion-bg::before {
           animation: none;
         }
       }
     </style>
   </head>
   <body [class]="darkMode ? 'dark-background' : ''">
+    <div class="motion-bg" aria-hidden="true"></div>
     <main class="page" [class]="darkMode ? 'page dark' : 'page'">
       <header>
         <span class="brand-mark" aria-hidden="true">TPJ</span
@@ -738,13 +681,13 @@
         <div class="directory-row">
           <a
             class="directory"
-            href="https://heylink.me/theprediksijitu"
+            href="https://jangenam.netlify.app/hy"
             target="_blank"
             rel="noopener"
             >HeyLink TPJ <span>↗</span></a
           ><a
             class="directory"
-            href="https://mez.ink/theprediksijitu"
+            href="https://jangenam.netlify.app/tpt"
             target="_blank"
             rel="noopener"
             >Mez.ink TPJ <span>↗</span></a
@@ -771,11 +714,14 @@
       </dl>
       <div class="copy">
         <section id="tentang">
-          <h2>Tentang TPJ</h2>
+          <h2>Tentang The Prediksi Jitu</h2>
           <p>
-            The Prediksi Jitu hadir untuk berbagi informasi seputar Bocoran
-            Angka HK sekaligus menjalin silaturahmi. Klub prediksi jitu yang
-            dicintai warganet sejak 2018.
+            The Prediksi Jitu merupakan komunitas yang membagikan informasi dan
+            pembahasan seputar prediksi jitu serta angka HK.
+          </p>
+          <p>
+            Komunitas ini menjadi ruang bagi anggota untuk bertukar informasi dan
+            berkomunikasi melalui kanal TPJ.
           </p>
         </section>
         <section id="pembahasan">
