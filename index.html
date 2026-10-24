@@ -160,6 +160,9 @@
     </main>
     <footer id="footer">
       <p>© 2026 The Prediksi Jitu. All Rights Reserved.</p>
+      <p>
+        <a id="amp-link" href="/amp/">Buka versi ringan</a>
+      </p>
     </footer>
     <script>
       (function () {
@@ -228,6 +231,9 @@
         document.querySelectorAll("#menu h2")[1].textContent = english ? "Community" : "Komunitas";
         document.getElementById("lang-en").classList.toggle("active", english);
         document.getElementById("lang-id").classList.toggle("active", !english);
+        document.getElementById("amp-link").textContent = english
+          ? "Open lightweight version"
+          : "Buka versi ringan";
       }
       document.getElementById("lang-en").onclick = () => language(true);
       document.getElementById("lang-id").onclick = () => language(false);
