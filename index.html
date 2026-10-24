@@ -74,11 +74,6 @@
           <ul>
             <li><a href="#tentang">Tentang TPJ</a></li>
             <li><a href="#pembahasan">Pembahasan</a></li>
-            <li>
-              <a href="/amp/" target="_blank" rel="noopener noreferrer"
-                >Versi Ringan</a
-              >
-            </li>
           </ul>
         </div>
         <div>
@@ -160,6 +155,8 @@
           <a href="https://heylink.me/theprediksijitu" target="_blank" rel="noopener noreferrer">HeyLink TPJ</a>
           |
           <a href="https://mez.ink/theprediksijitu" target="_blank" rel="noopener noreferrer">Mez.ink TPJ</a>
+          |
+          <a href="/amp/" target="_blank" rel="noopener noreferrer">Versi Ringan</a>
         </p>
       </section>
     </main>
@@ -214,7 +211,7 @@
         '<h2>About The Prediksi Jitu</h2><p>The Prediksi Jitu is a community that shares information and discussions about predictions and HK numbers.</p><p>The community gives members a place to exchange information and communicate through TPJ channels.</p>',
         '<h2>Predictions and HK Number Discussions</h2><p>TPJ discussions cover predictions, information about HK numbers, and community members’ views.</p><p>The information on this page is provided for information and discussion. No prediction guarantees a particular result.</p>',
         '<h2>The Prediksi Jitu Community Channels</h2><p>Use the following channels to follow community information and discussions.</p><ul><li><a href="https://jangenam.netlify.app/tele" target="_blank" rel="noopener noreferrer">Community Telegram</a></li><li><a href="https://jangenam.netlify.app/fb" target="_blank" rel="noopener noreferrer">TPJ Facebook</a></li><li><a href="https://jangenam.netlify.app/group" target="_blank" rel="noopener noreferrer">TPJ Facebook Group</a></li></ul>',
-        '<h2>More Links</h2><p>Find additional links related to The Prediksi Jitu:</p><p><a href="https://heylink.me/theprediksijitu" target="_blank" rel="noopener noreferrer">TPJ HeyLink</a> | <a href="https://mez.ink/theprediksijitu" target="_blank" rel="noopener noreferrer">TPJ Mez.ink</a></p>',
+        '<h2>More Links</h2><p>Find additional links related to The Prediksi Jitu:</p><p><a href="https://heylink.me/theprediksijitu" target="_blank" rel="noopener noreferrer">TPJ HeyLink</a> | <a href="https://mez.ink/theprediksijitu" target="_blank" rel="noopener noreferrer">TPJ Mez.ink</a> | <a href="/amp/" target="_blank" rel="noopener noreferrer">Lightweight Version</a></p>',
       ];
       function language(english) {
         document.documentElement.lang = english ? "en" : "id";
@@ -225,8 +222,8 @@
           (a, i) =>
             (a.textContent = (
               english
-                ? ["About TPJ", "Discussions", "Lightweight Version", "Community Channels", "More Links"]
-                : ["Tentang TPJ", "Pembahasan", "Versi Ringan", "Kanal Komunitas", "Tautan Lainnya"]
+                ? ["About TPJ", "Discussions", "Community Channels", "More Links"]
+                : ["Tentang TPJ", "Pembahasan", "Kanal Komunitas", "Tautan Lainnya"]
             )[i]),
         );
         document.querySelector("#menu h2").textContent = english ? "General" : "Umum";
